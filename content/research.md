@@ -7,8 +7,8 @@ weight: 10
 #### Publications
 
 ### [Labor Market Signals: The Role of Large Language Models](https://pure.uvt.nl/ws/portalfiles/portal/113672706/2025-003.pdf)
-<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kiarash Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a><br>
-<em>Accepted at the Journal of Labor Economics</em>, 2026</p>
+<p class="venue">Accepted at the <em>Journal of Labor Economics</em>, 2026</p>
+<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kiarash Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a></p>
 
 <p class="muted coverage">Media coverage:
 <a href="https://www.tilburguniversity.edu/nl/actueel/persberichten/ai-maakt-sollicitatiebrieven-beter-verslechtert-de-match">Tilburg University</a>,
@@ -31,8 +31,7 @@ weight: 10
 <p class="muted">with <a href="https://sigridsuetens.weebly.com/">Sigrid Suetens</a> and <a href="https://sites.google.com/site/burakruras/home">Burak R. Uras</a></p>
 
 ### [Efficient Two-Sample Instrumental Variable Estimators with Change Points and Near-Weak Identification](https://arxiv.org/abs/2406.17056)
-<p class="muted">with <a href="https://www.sfu.ca/~baa7/">Bertille Antoine</a> and <a href="https://sites.google.com/site/otiliaboldea/home">Otilia Boldea</a><br>
-<em>Submitted</em></p>
+<p class="muted">with <a href="https://www.sfu.ca/~baa7/">Bertille Antoine</a> and <a href="https://sites.google.com/site/otiliaboldea/home">Otilia Boldea</a></p>
 
 #### Work in Progress
 

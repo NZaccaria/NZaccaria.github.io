@@ -4,6 +4,6 @@ title: "Home"
 
 ## Welcome!
 
-I am a PhD candidate in Economics at [Tilburg University](https://www.tilburguniversity.edu/). My supervisors are [Burak Uras](https://sites.google.com/site/burakruras/home) and [Sigrid Suetens](https://sigridsuetens.weebly.com/).
+I am Niccolò Zaccaria, a PhD candidate in Economics at [Tilburg University](https://www.tilburguniversity.edu/). My research focuses on price rigidities and firm dynamics. I also study how AI and large language models affect economic signals and aggregate outcomes.
 
-My research focuses on price rigidities and firm dynamics. I also study how AI and large language models affect economic signals and aggregate outcomes.
+My supervisors are [Burak Uras](https://sites.google.com/site/burakruras/home) and [Sigrid Suetens](https://sigridsuetens.weebly.com/). In Spring 2026 I visited the [Department of Economics](https://as.nyu.edu/departments/econ.html) at New York University.
