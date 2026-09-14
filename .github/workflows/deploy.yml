@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  repository_dispatch:
+    types: [docs-updated]
+  schedule:
+    # Daily, so PDF updates in selection-on-exit-public land without a push here.
+    - cron: "17 5 * * *"
 
 permissions:
   contents: read
@@ -27,6 +32,16 @@ jobs:
         run: |
           curl -sSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" -o hugo.deb
           sudo dpkg -i hugo.deb
+      - name: Fetch PDFs from selection-on-exit-public
+        env:
+          SRC: https://raw.githubusercontent.com/NZaccaria/selection-on-exit-public/main
+        run: |
+          mkdir -p static/files
+          curl -fsSL "$SRC/Zaccaria_CV.pdf"     -o static/files/cv.pdf
+          curl -fsSL "$SRC/Zaccaria_JMP.pdf"    -o static/files/jmp.pdf
+          curl -fsSL "$SRC/Zaccaria_slides.pdf" -o static/files/slides.pdf
+          ls -lh static/files
+
       - uses: actions/configure-pages@v5
         id: pages
       - name: Build

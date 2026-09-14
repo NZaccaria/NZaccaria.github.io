@@ -11,7 +11,7 @@ enableRobotsTXT = true
   affiliationURL = "https://www.tilburguniversity.edu/"
   email       = "n.zaccaria@tilburguniversity.edu"
   photo       = "images/profile.jpg"
-  cv          = "https://drive.google.com/file/d/1_dDLwRvsq9SmfwZHH3XlfRhjW-y0jgBw/view"
+  cv          = "/files/cv.pdf"
   description = "Niccolò Zaccaria, PhD candidate in Economics at Tilburg University. Research on price rigidities, firm dynamics, and the economics of AI."
 
 [[params.nav]]

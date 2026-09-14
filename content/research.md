@@ -22,8 +22,8 @@ weight: 10
 
 #### Working Papers
 
-### Selection on Exit and Sticky Prices
-<p class="muted">Job market paper, 2026</p>
+### [Selection on Exit and Sticky Prices](/files/jmp.pdf)
+<p class="muted">Job market paper, 2026 &middot; <a href="/files/slides.pdf">Slides</a> &middot; <a href="https://github.com/NZaccaria/selection-on-exit-public">Replication code</a></p>
 
 ### [Overconfidence and Information Aggregation](https://drive.google.com/file/d/164xPk_K29cruZaeJvqNSyfyqoNbM1umx/view)
 <p class="muted">2025</p>
