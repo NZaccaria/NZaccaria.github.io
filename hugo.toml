@@ -1,17 +1,18 @@
 baseURL = "https://niccolozaccaria.com/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Niccolò Zaccaria"
 enableRobotsTXT = true
 
 [params]
+  office      = "Office K332, Warandelaan 2, 5037 AB Tilburg, NL"
   name        = "Niccolò Zaccaria"
-  role        = "PhD Student in Economics"
-  affiliation = "TODO: Your University"
-  affiliationURL = ""
-  email       = "TODO@example.com"
+  role        = "PhD Candidate in Economics"
+  affiliation = "Tilburg University"
+  affiliationURL = "https://www.tilburguniversity.edu/"
+  email       = "n.zaccaria@tilburguniversity.edu"
   photo       = "images/profile.jpg"
-  cv          = "files/cv.pdf"
-  description = "Personal website of Niccolò Zaccaria, PhD student in Economics."
+  cv          = "https://drive.google.com/file/d/1_dDLwRvsq9SmfwZHH3XlfRhjW-y0jgBw/view"
+  description = "Niccolò Zaccaria, PhD candidate in Economics at Tilburg University. Research on price rigidities, firm dynamics, and the economics of AI."
 
 [[params.nav]]
   name = "Home"

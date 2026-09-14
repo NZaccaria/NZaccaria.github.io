@@ -4,4 +4,4 @@ section_id: "cv"
 weight: 30
 ---
 
-<a class="btn" href="/files/cv.pdf">Download CV (PDF)</a>
+<a class="btn" href="{{< param "cv" >}}">Download CV (PDF)</a>

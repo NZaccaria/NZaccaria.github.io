@@ -13,6 +13,7 @@
       {{ else }}{{ $p.affiliation }}{{ end }}
     </p>
     <p class="profile__email"><a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+    {{ with $p.office }}<p class="profile__office">{{ . }}</p>{{ end }}
   </aside>
 
   <div class="section__body intro">

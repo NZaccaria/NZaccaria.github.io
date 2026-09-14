@@ -126,6 +126,12 @@ main { max-width: 68rem; margin: 0 auto; padding: 0 var(--gutter); }
 
 .muted { color: var(--ink-soft); }
 
+.coverage {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  margin-top: 0.5rem !important;
+}
+
 .rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
 
 /* ---------- home / profile ---------- */
@@ -169,6 +175,13 @@ main { max-width: 68rem; margin: 0 auto; padding: 0 var(--gutter); }
 }
 
 .profile__email { margin-top: 0.7rem; word-break: break-word; }
+
+.profile__office {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
 
 /* ---------- buttons ---------- */
 
