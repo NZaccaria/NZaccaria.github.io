@@ -1,0 +1,11 @@
+{{/* Rothko, cool: two fields over a pale slate ground, in the Nighthawks
+     register. */}}
+{{ partial "art/_canvas.html" (dict
+  "id" "cool"
+  "ground" "#f4f6f5"
+  "seed" 4 "freq" 0.009 "scale" 34 "blur" 13
+  "fields" (slice
+    (dict "x" 70 "y" 90 "w" 860 "h" 560 "c" "#cfe3e0")
+    (dict "x" 70 "y" 720 "w" 860 "h" 420 "c" "#f7e2bd")
+    (dict "x" 70 "y" 1210 "w" 860 "h" 150 "c" "#dfe6ee")
+  )) }}

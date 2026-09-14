@@ -1,0 +1,104 @@
+{{ $art := .Site.Params.art | default "none" }}
+{{ $all := slice "rothko" "rothko-pale" "rothko-cool" "rothko-orange" "rothko-maroon" "rothko-royal" "rothko-white-center" "rothko-green-maroon" "rothko-yellow-blue" "rothko-no14" "rothko-ochre-red" "rothko-magenta" }}
+
+{{ if hugo.IsServer }}
+  {{/* Dev only: ship all three plus a switcher, so variants can be compared live. */}}
+  {{ range $all }}
+    <div class="art art--{{ . }}" data-art="{{ . }}" aria-hidden="true" hidden>
+      {{ partial (printf "art/%s.html" .) $ }}
+    </div>
+  {{ end }}
+  <div class="art-switch" role="group" aria-label="Background variant">
+    {{ range $all }}<button type="button" data-pick="{{ . }}">{{ . }}</button>{{ end }}
+    <button type="button" data-pick="none">none</button>
+    <button type="button" id="frame-toggle">frame</button>
+    <button type="button" id="nav-toggle">nav</button>
+    <label class="art-strength" data-lever="art">
+      <span>art</span>
+      <input type="range" min="0" max="100" step="5"
+             value="{{ mul (.Site.Params.art_strength | default 0.45) 100 }}">
+      <output></output>
+    </label>
+    <label class="art-strength" data-lever="grain">
+      <span>grain</span>
+      <input type="range" min="0" max="100" step="5"
+             value="{{ mul (.Site.Params.grain_strength | default 0.35) 100 }}">
+      <output></output>
+    </label>
+  </div>
+  <script>
+  (function () {
+    var def = {{ $art }};
+    function show(name) {
+      document.querySelectorAll('.art[data-art]').forEach(function (el) {
+        el.hidden = el.dataset.art !== name;
+      });
+      document.querySelectorAll('[data-pick]').forEach(function (b) {
+        b.classList.toggle('on', b.dataset.pick === name);
+      });
+      document.documentElement.dataset.art = name;
+      try { localStorage.setItem('art', name); } catch (e) {}
+      history.replaceState(null, '', name === def ? location.pathname : '?art=' + name);
+    }
+    ['art', 'grain'].forEach(function (lever) {
+      var wrap = document.querySelector('[data-lever="' + lever + '"]');
+      var input = wrap.querySelector('input');
+      var out = wrap.querySelector('output');
+      var key = lever + 'Strength';
+      var prop = '--' + lever + '-strength';
+      function set(v) {
+        document.documentElement.style.setProperty(prop, v / 100);
+        out.textContent = v + '%';
+        try { localStorage.setItem(key, v); } catch (e) {}
+      }
+      var saved = null; try { saved = localStorage.getItem(key); } catch (e) {}
+      if (saved !== null) input.value = saved;
+      set(input.value);
+      input.addEventListener('input', function () { set(input.value); });
+    });
+
+    var q = new URLSearchParams(location.search).get('art');
+    var saved = null; try { saved = localStorage.getItem('art'); } catch (e) {}
+    show(q || saved || def);
+    document.querySelectorAll('[data-pick]').forEach(function (b) {
+      b.addEventListener('click', function () { show(b.dataset.pick); });
+    });
+
+    var nt = document.getElementById('nav-toggle');
+    var modes = ['fade', 'reveal', 'rail', 'paper', 'static'];
+    function navMode(mode) {
+      document.documentElement.dataset.navmode = mode;
+      nt.classList.toggle('on', true);
+      nt.textContent = 'nav: ' + mode;
+      try { localStorage.setItem('navMode', mode); } catch (e) {}
+    }
+    var savedN = null; try { savedN = localStorage.getItem('navMode'); } catch (e) {}
+    navMode(savedN || document.documentElement.dataset.navmode || 'fade');
+    nt.addEventListener('click', function () {
+      var i = modes.indexOf(document.documentElement.dataset.navmode);
+      navMode(modes[(i + 1) % modes.length]);
+    });
+
+    var ft = document.getElementById('frame-toggle');
+    function frame(on) {
+      document.documentElement.dataset.frame = on ? 'on' : 'off';
+      ft.classList.toggle('on', on);
+      try { localStorage.setItem('artFrame', on ? '1' : '0'); } catch (e) {}
+    }
+    var savedF = null; try { savedF = localStorage.getItem('artFrame'); } catch (e) {}
+    frame(savedF === null
+      ? document.documentElement.dataset.frame === 'on'
+      : savedF === '1');
+    ft.addEventListener('click', function () {
+      frame(document.documentElement.dataset.frame !== 'on');
+    });
+  })();
+  </script>
+{{ else }}
+  {{ if ne $art "none" }}
+    <div class="art art--{{ $art }}" aria-hidden="true"
+         style="--art-strength: {{ .Site.Params.art_strength | default 0.45 }}">
+      {{ partial (printf "art/%s.html" $art) . }}
+    </div>
+  {{ end }}
+{{ end }}

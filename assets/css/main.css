@@ -1,8 +1,21 @@
+:root[data-art="rothko"],
+:root[data-art="rothko-pale"]    { --link: #9a4028; --rule: #d8c3b4; }
+:root[data-art="rothko-orange"]  { --link: #8f3a1c; --rule: #dfc0a8; }
+:root[data-art="rothko-maroon"]  { --link: #7d2f2a; --rule: #d9bbb4; }
+:root[data-art="rothko-royal"]   { --link: #35508f; --rule: #cdc0c6; }
+:root[data-art="rothko-cool"]    { --link: #14554f; --rule: #c6d2ce; }
+:root[data-art="rothko-white-center"] { --link: #a0424c; --rule: #ddc3c6; }
+:root[data-art="rothko-green-maroon"] { --link: #2f5c3f; --rule: #cbbcb8; }
+:root[data-art="rothko-yellow-blue"]  { --link: #2c4a7d; --rule: #d9cbb2; }
+:root[data-art="rothko-no14"]         { --link: #33447e; --rule: #d3c2bd; }
+:root[data-art="rothko-ochre-red"]    { --link: #8f4426; --rule: #dcbfab; }
+:root[data-art="rothko-magenta"]      { --link: #7d3459; --rule: #d9c4bb; }
+
 :root {
   --ink:        #1a1a1a;
   --ink-soft:   #4a4a4a;
   --link:       #2f5fd0;
-  --line:       #e4e4e4;
+  --line:       var(--rule, #e4e4e4);
   --bg:         #ffffff;
   --serif:      "Fraunces", Georgia, "Times New Roman", serif;
   --sans:       "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -12,6 +25,82 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* ---------- background art ---------- */
+
+.art {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* The artwork is a ground, not a subject: hold it well back. */
+  opacity: var(--art-strength, 0.45);
+}
+
+.art svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/images/grain.png");
+  background-size: 360px 360px;
+  opacity: var(--grain-strength, 0.35);
+  mix-blend-mode: multiply;
+}
+
+/* Content sits above the art. */
+.topbar, main, .footer { position: relative; z-index: 1; }
+
+/* Dev-only variant switcher (never shipped: the markup is server-only). */
+.art-switch {
+  position: fixed;
+  max-width: calc(100vw - 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.13);
+}
+.art-switch button {
+  font: inherit;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+  padding: 0.3rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.art-switch button:hover { color: var(--ink); }
+.art-switch button.on { background: var(--ink); color: #fff; }
+.art-strength {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.6rem;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+.art-strength input { width: 78px; }
+.art-strength output { min-width: 2.6em; }
+.art-strength span { opacity: 0.75; }
 
 body {
   margin: 0;
@@ -23,8 +112,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.055em;
+  text-underline-offset: 0.17em;
+  text-decoration-color: color-mix(in srgb, var(--link) 34%, transparent);
+  transition: text-decoration-color 140ms ease, color 140ms ease;
+}
+a:hover { text-decoration-color: var(--link); }
 
 /* ---------- top bar ---------- */
 
@@ -49,6 +145,7 @@ a:hover { text-decoration: underline; }
 }
 
 .brand {
+  text-decoration: none;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 500;
@@ -66,6 +163,7 @@ a:hover { text-decoration: underline; }
 }
 
 .nav-links a {
+  text-decoration: none;
   color: var(--ink-soft);
   padding-bottom: 2px;
   border-bottom: 1.5px solid transparent;
@@ -79,6 +177,144 @@ a:hover { text-decoration: underline; }
 /* ---------- sections ---------- */
 
 main { max-width: 68rem; margin: 0 auto; padding: 0 var(--gutter); }
+
+:root[data-frame="on"] body { background: transparent; }
+
+:root[data-frame="on"] .topbar {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 0;
+}
+
+/* nav=static: the masthead scrolls away like the top of a printed page.
+   Nothing ever floats over the text. */
+:root[data-frame="on"][data-navmode="static"] .topbar { position: relative; z-index: 2; }
+
+/* nav=paper: it stays, but only as wide as the sheet and on the same paper,
+   so it reads as the head of the page rather than a bar across the site. */
+:root[data-frame="on"][data-navmode="paper"] .nav-inner {
+  background: #fffdfa;
+  border-bottom: 1px solid var(--line);
+}
+
+/* nav=fade: transparent over the mount at rest; once you scroll, a soft
+   paper gradient slides in behind it so text dissolves upward instead of
+   colliding with a hard edge. No bar, and the nav never leaves. */
+:root[data-frame="on"][data-navmode="fade"] .nav-inner,
+:root[data-frame="on"][data-navmode="reveal"] .nav-inner { position: relative; }
+
+/* nav=reveal: the fade, plus the bar steps out of the way while you read
+   down and returns the moment you scroll back up. */
+:root[data-navmode="reveal"] .topbar {
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+:root[data-navmode="reveal"][data-dir="down"] .topbar {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* nav=rail: gallery labels in the mount; the masthead scrolls away. */
+:root[data-frame="on"][data-navmode="rail"] .topbar { position: relative; z-index: 2; }
+
+.rail { display: none; }
+
+:root[data-navmode="rail"] .rail {
+  display: block;
+  position: fixed;
+  left: max(0.9rem, calc((100vw - 62rem) / 2 - 5.6rem));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.rail ul { list-style: none; margin: 0; padding: 0; }
+.rail li { margin: 0.55rem 0; }
+
+.rail a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  transition: color 160ms ease;
+}
+.rail a:hover { color: var(--ink); text-decoration: none; }
+.rail a.active { color: var(--link); font-weight: 500; }
+
+.rail__tick {
+  display: block;
+  width: 0.7rem;
+  height: 1px;
+  background: currentColor;
+  transition: width 160ms ease;
+}
+.rail a.active .rail__tick { width: 1.5rem; }
+
+/* No mount to sit in on a narrow screen: fall back to the fade. */
+@media (max-width: 1180px) {
+  :root[data-navmode="rail"] .rail { display: none; }
+  :root[data-frame="on"][data-navmode="rail"] .topbar { position: sticky; }
+  :root[data-frame="on"][data-navmode="rail"] .nav-inner { position: relative; }
+  :root[data-frame="on"][data-navmode="rail"] .nav-inner::before {
+    content: "";
+    position: absolute;
+    inset: -0.35rem 0 -1.3rem;
+    z-index: -1;
+    background: linear-gradient(to bottom, #fffdfa 0%, #fffdfa 74%,
+                rgba(255,253,250,0.82) 86%, rgba(255,253,250,0) 100%);
+    opacity: 0;
+  }
+  :root[data-frame="on"][data-navmode="rail"][data-scrolled="1"] .nav-inner::before { opacity: 1; }
+}
+
+:root[data-frame="on"][data-navmode="fade"] .nav-inner::before,
+:root[data-frame="on"][data-navmode="reveal"] .nav-inner::before {
+  content: "";
+  position: absolute;
+  inset: -0.35rem 0 -1.3rem;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    #fffdfa 0%,
+    #fffdfa 74%,
+    rgba(255, 253, 250, 0.82) 86%,
+    rgba(255, 253, 250, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+:root[data-frame="on"][data-navmode="fade"][data-scrolled="1"] .nav-inner::before,
+:root[data-frame="on"][data-navmode="reveal"][data-scrolled="1"] .nav-inner::before {
+  opacity: 1;
+}
+
+:root[data-frame="on"] main {
+  max-width: 62rem;
+  background: #fffdfa;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  margin-block: clamp(1.25rem, 3.5vw, 2.75rem) clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 1px 1px rgba(60, 40, 30, 0.05),
+              0 18px 50px -18px rgba(60, 40, 30, 0.22);
+}
+
+/* The nav rides on the painting, so give it a little more air. */
+:root[data-frame="on"] .nav-inner {
+  max-width: 62rem;
+  padding-block: 0.85rem;
+}
+
+:root[data-frame="on"] .footer {
+  border-top: 0;
+  text-align: center;
+}
+
+/* The footer sits on the artwork rather than on paper, so it needs full ink
+   to clear contrast against the darker fields. */
+:root[data-frame="on"] .footer p { color: var(--ink); }
 
 .section {
   display: grid;

@@ -1,0 +1,9 @@
+{{/* A gallery-label rail: section names set in the mount beside the sheet,
+     where they can never cross the text. Only rendered for nav_mode=rail. */}}
+<nav class="rail" aria-label="Sections">
+  <ul>
+    {{ range .Site.Params.nav }}
+      <li><a href="#{{ .id }}" data-rail="{{ .id }}"><span class="rail__tick"></span>{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+</nav>

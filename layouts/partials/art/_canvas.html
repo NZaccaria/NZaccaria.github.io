@@ -1,0 +1,28 @@
+{{/* Shared Rothko canvas. Takes a ground colour and a list of fields, and
+     renders them with the turbulence-displaced edge that gives the borders
+     their waver. Each variant passes its own seed so no two feather alike. */}}
+{{ $id    := .id }}
+{{ $seed  := .seed  | default 11 }}
+{{ $freq  := .freq  | default 0.010 }}
+{{ $scale := .scale | default 30 }}
+{{ $blur  := .blur  | default 11 }}
+<svg viewBox="0 0 1000 1400" preserveAspectRatio="xMidYMid slice"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="f-{{ $id }}" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="{{ $freq }}" numOctaves="3"
+                    seed="{{ $seed }}" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="{{ $scale }}"
+                         xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="{{ $blur }}"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1400" fill="{{ .ground }}"/>
+
+  <g filter="url(#f-{{ $id }})">
+    {{ range .fields }}
+      <rect x="{{ .x }}" y="{{ .y }}" width="{{ .w }}" height="{{ .h }}" fill="{{ .c }}"/>
+    {{ end }}
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{{/* Rothko, warm: stacked fields floating on a ground that breathes through at
+     the edges. */}}
+{{ partial "art/_canvas.html" (dict
+  "id" "base"
+  "ground" "#fcf3e8"
+  "seed" 11 "freq" 0.011 "scale" 30 "blur" 11
+  "fields" (slice
+    (dict "x" 78 "y" 110 "w" 844 "h" 470 "c" "#f7d8ba")
+    (dict "x" 78 "y" 650 "w" 844 "h" 360 "c" "#f3c9c0")
+    (dict "x" 78 "y" 1080 "w" 844 "h" 240 "c" "#eedcc2")
+  )) }}
