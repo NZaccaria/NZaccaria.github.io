@@ -23,25 +23,24 @@ weight: 10
 #### Working Papers
 
 ### [Selection on Exit and Sticky Prices](/files/jmp.pdf)
-<p class="muted">Job market paper, 2026 &middot; <a href="/files/slides.pdf">Slides</a> &middot; <a href="https://github.com/NZaccaria/selection-on-exit-public">Replication code</a></p>
+<p class="muted">Job market paper</p>
 
 ### [Overconfidence and Information Aggregation](https://drive.google.com/file/d/164xPk_K29cruZaeJvqNSyfyqoNbM1umx/view)
-<p class="muted">2025</p>
 
 ### [Mispricing Through Misconfidence](https://drive.google.com/file/d/1AXviSppT7WJxtWzaiqZLZ6Cv1bCdsz_G/view)
-<p class="muted">with <a href="https://sigridsuetens.weebly.com/">Sigrid Suetens</a> and <a href="https://sites.google.com/site/burakruras/home">Burak R. Uras</a>, 2024</p>
+<p class="muted">with <a href="https://sigridsuetens.weebly.com/">Sigrid Suetens</a> and <a href="https://sites.google.com/site/burakruras/home">Burak R. Uras</a></p>
 
 ### [Efficient Two-Sample Instrumental Variable Estimators with Change Points and Near-Weak Identification](https://arxiv.org/abs/2406.17056)
 <p class="muted">with <a href="https://www.sfu.ca/~baa7/">Bertille Antoine</a> and <a href="https://sites.google.com/site/otiliaboldea/home">Otilia Boldea</a><br>
-<em>Submitted</em>, 2024</p>
+<em>Submitted</em></p>
 
 #### Work in Progress
 
-### Bootstrap Methods for Impulse Responses Obtained by Local Projections
-<p class="muted">with <a href="https://sites.google.com/site/otiliaboldea/home">Otilia Boldea</a>, Adriana Cornea-Madeira and Alastair Hall</p>
-
 ### Markups and Price Discovery
 <p class="muted">with <a href="https://www.elenacasanovas.com/">Elena Casanovas</a></p>
+
+### Bootstrap Methods for Impulse Responses Obtained by Local Projections
+<p class="muted">with <a href="https://sites.google.com/site/otiliaboldea/home">Otilia Boldea</a>, Adriana Cornea-Madeira and Alastair Hall</p>
 
 #### Other Writings
 
