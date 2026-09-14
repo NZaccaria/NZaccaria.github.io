@@ -7,8 +7,8 @@ weight: 10
 #### Publications
 
 ### [Labor Market Signals: The Role of Large Language Models](https://pure.uvt.nl/ws/portalfiles/portal/113672706/2025-003.pdf)
-<p class="venue">Accepted at the <em>Journal of Labor Economics</em>, 2026</p>
-<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kiarash Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a></p>
+<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kian Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a><br>
+<em>Accepted at the Journal of Labor Economics</em>, 2026</p>
 
 <p class="muted coverage">Media coverage:
 <a href="https://www.tilburguniversity.edu/nl/actueel/persberichten/ai-maakt-sollicitatiebrieven-beter-verslechtert-de-match">Tilburg University</a>,
@@ -44,7 +44,7 @@ weight: 10
 #### Other Writings
 
 ### [AI maakt solliciteren makkelijker, maar matching moeilijker](https://esb.nu/ai-maakt-solliciteren-makkelijker-maar-matching-moeilijker/)
-<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kiarash Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a><br>
+<p class="muted">with <a href="https://www.tilburguniversity.edu/staff/k-abbasnejad">Kian Abbas Nejad</a>, <a href="https://giuseppemusillo.github.io/">Giuseppe Musillo</a> and <a href="https://sites.google.com/view/tillwicker">Till Wicker</a><br>
 <em>ESB</em>, 2026, 111(4859): 330–332. <a href="https://www.dropbox.com/scl/fi/og1ndi2a3bv0ud875hkzw/ESB_LLM_matching_English.pdf?rlkey=26n0ij3404o6oyw7e95yu9dnl&dl=0">English PDF</a></p>
 
 <p class="muted coverage">Media coverage:

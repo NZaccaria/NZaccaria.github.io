@@ -126,13 +126,6 @@ main { max-width: 68rem; margin: 0 auto; padding: 0 var(--gutter); }
 
 .muted { color: var(--ink-soft); }
 
-.venue {
-  color: var(--ink);
-  font-weight: 500;
-  margin: 0.15rem 0 0.1rem !important;
-}
-.venue em { font-style: italic; }
-
 .coverage {
   font-size: 0.85rem;
   line-height: 1.55;
