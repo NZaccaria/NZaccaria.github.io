@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $p := .Site.Params }}
+
+<section id="home" class="section section--home">
+  <aside class="profile">
+    {{ with $p.photo }}
+      <img class="profile__photo" src="{{ . | relURL }}" alt="{{ $p.name }}" width="640" height="800">
+    {{ end }}
+    <h1 class="profile__name">{{ $p.name }}</h1>
+    <p class="profile__role">{{ $p.role }}</p>
+    <p class="profile__affil">
+      {{ if $p.affiliationURL }}<a href="{{ $p.affiliationURL }}">{{ $p.affiliation }}</a>
+      {{ else }}{{ $p.affiliation }}{{ end }}
+    </p>
+    <p class="profile__email"><a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+  </aside>
+
+  <div class="section__body intro">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ range (where .Site.RegularPages "Params.section_id" "!=" nil).ByWeight }}
+  <hr class="rule">
+  <section id="{{ .Params.section_id }}" class="section">
+    <h2 class="section__title">{{ .Title }}</h2>
+    <div class="section__body">
+      {{ .Content }}
+    </div>
+  </section>
+{{ end }}
+{{ end }}

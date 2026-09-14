@@ -1,0 +1,30 @@
+baseURL = "https://niccolozaccaria.com/"
+languageCode = "en-us"
+title = "Niccolò Zaccaria"
+enableRobotsTXT = true
+
+[params]
+  name        = "Niccolò Zaccaria"
+  role        = "PhD Student in Economics"
+  affiliation = "TODO: Your University"
+  affiliationURL = ""
+  email       = "TODO@example.com"
+  photo       = "images/profile.jpg"
+  cv          = "files/cv.pdf"
+  description = "Personal website of Niccolò Zaccaria, PhD student in Economics."
+
+[[params.nav]]
+  name = "Home"
+  id   = "home"
+[[params.nav]]
+  name = "Research"
+  id   = "research"
+[[params.nav]]
+  name = "Teaching"
+  id   = "teaching"
+[[params.nav]]
+  name = "CV"
+  id   = "cv"
+
+[markup.goldmark.renderer]
+  unsafe = true
