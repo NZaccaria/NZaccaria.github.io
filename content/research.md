@@ -2,6 +2,9 @@
 title: "Research"
 section_id: "research"
 weight: 10
+build:
+  render: never
+  list: always
 ---
 
 #### Publications

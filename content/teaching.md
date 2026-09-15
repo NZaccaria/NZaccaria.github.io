@@ -2,6 +2,9 @@
 title: "Teaching"
 section_id: "teaching"
 weight: 20
+build:
+  render: never
+  list: always
 ---
 
 ### Macroeconomics 1

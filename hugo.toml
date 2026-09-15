@@ -2,9 +2,10 @@ baseURL = "https://niccolozaccaria.com/"
 locale = "en-us"
 title = "Niccolò Zaccaria"
 enableRobotsTXT = true
+# No blog, so no taxonomy pages: they only generated empty URLs.
+disableKinds = ["taxonomy", "term"]
 
 [params]
-  office      = "Office K332, Warandelaan 2, 5037 AB Tilburg, NL"
   name        = "Niccolò Zaccaria"
   role        = "PhD Candidate in Economics"
   affiliation = "Tilburg University"
