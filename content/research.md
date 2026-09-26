@@ -53,7 +53,7 @@ build:
 
 <p class="muted coverage">Media coverage:
 <a href="https://www.trouw.nl/duurzaamheid-economie/sollicitatiebrief-geschreven-met-chatgpt-dat-vergroot-de-kans-dat-een-bedrijf-de-verkeerde-kandidaat-aanneemt~b4b2d3a2/">Trouw</a>,
-BNR,
+<a href="https://www.bnr.nl/nieuws/tech-innovatie/10607241/ai-maakt-je-sollicitatiebrief-beter-maar-vergroot-niet-je-kans-op-een-baan">BNR</a>,
 <a href="https://www.rd.nl/artikel/1158679-sollicitatiebrief-geschreven-met-chatgpt-dat-vergroot-de-kans-dat-een-bedrijf-de-verkeerde-kandidaat-aanneemt">RD</a>,
 <a href="https://businessam.be/ai-helpt-werkzoekenden-solliciteren-maar-maakt-het-moeilijker-voor-werkgevers-om-talent-te-vinden">BusinessAM</a>,
 <a href="https://www.hrmorgen.nl/2026/08/ai-maakt-solliciteren-makkelijker-maar-dreigt-matching-te-verslechteren">HRMorgen</a>.</p>
