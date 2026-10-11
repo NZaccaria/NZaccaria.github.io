@@ -29,7 +29,7 @@ build:
 ### [Selection on Exit and Sticky Prices](/files/jmp.pdf)
 <p class="muted">Job market paper</p>
 
-### [Overconfidence and Information Aggregation](https://drive.google.com/file/d/164xPk_K29cruZaeJvqNSyfyqoNbM1umx/view)
+### [Corrective Biases in Coordination Economies with Dispersed Information](https://nzaccaria.github.io/selection-on-exit-public/Zaccaria_CorrectiveBiases.pdf)
 
 ### [Mispricing Through Misconfidence](https://drive.google.com/file/d/1AXviSppT7WJxtWzaiqZLZ6Cv1bCdsz_G/view)
 <p class="muted">with <a href="https://sigridsuetens.weebly.com/">Sigrid Suetens</a> and <a href="https://sites.google.com/site/burakruras/home">Burak R. Uras</a></p>
