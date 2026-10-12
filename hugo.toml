@@ -20,6 +20,7 @@ disableKinds = ["taxonomy", "term"]
   art_frame    = true   # content on paper, artwork as the surrounding mount
   grain_strength = 0.35   # 0-1: how much tooth the surround has
   nav_mode     = "static"   # fade | reveal | rail | paper | static
+  goatcounter  = ""   # GoatCounter site code, e.g. "niccolozaccaria"; empty = off
   cv          = "/files/cv.pdf"
   description = "Niccolò Zaccaria, PhD candidate in Economics at Tilburg University. Research on price rigidities, firm dynamics, and the economics of AI."
 

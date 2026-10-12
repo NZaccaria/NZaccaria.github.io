@@ -1,0 +1,25 @@
+{{/* GoatCounter: cookieless analytics. Only loads on the published site once
+     goatcounter is set in hugo.toml, so local previews never count. */}}
+{{ with .Site.Params.goatcounter }}
+  {{ if not hugo.IsServer }}
+    <script data-goatcounter="https://{{ . }}.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script>
+    // Everything lives on one page, so page views alone say little. Record
+    // clicks on PDFs (CV, JMP) and on links leaving the site (papers, press).
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.goatcounter || !window.goatcounter.count) return;
+      var url = new URL(a.href, location.href);
+      var isFile = /\.pdf$/i.test(url.pathname);
+      var isOut = url.host !== location.host;
+      if (!isFile && !isOut) return;
+      window.goatcounter.count({
+        path: isOut ? url.href : url.pathname,
+        title: a.textContent.trim(),
+        event: true
+      });
+    });
+    </script>
+  {{ end }}
+{{ end }}
